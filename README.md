@@ -4,30 +4,51 @@ This repository is you're go-to repository for  accessing project templates, doc
 Follow the list of checks below to ensure that you are developing software development initiatives that abide by Zutari's best practice, styling and project structure:
 - [X] Use Git-workflows to version control and structure your development to have the correct branching structure. Regularly push new features and updates to the correct branch (at least weekly or every Friday). External training resources can be accessed from the Zutari-CoDe Sharepoint page.
 - [X] Use a folder template that matches as close as possible to the guidelines.
-- [X] Study and implement the coding standards. This ensures easy readability by different developers and consistency across code bases. Utilise industry best practice.
+- [X] Study and implement the coding standards. This ensures easy readability by different developers and consistency across code bases. Utilize industry best practice.
 - [X] Implement a [Software Design Document](#software-design-document-template) for a project to clearly state the requirements and expectations.
-- [X] The final implementation phase used for a project is externalisation - where the end user utilises a specific tool. This might be a simple, standalone tool or script, such as a Dynamo file, or a fully fledged piece of software with a GUI (graphical user interface). Consider how the tool be deployed in a production environment, considering limitations imposed on administrative rights. Refer to the [Virtual Machine](#virtual-machines) resources that are available on GitHub.
+- [X] The final implementation phase used for a project is externalization - where the end user utilizes a specific tool. This might be a simple, standalone tool or script, such as a Dynamo file, or a fully fledged piece of software with a GUI (graphical user interface). Consider how the tool be deployed in a production environment, considering limitations imposed on administrative rights. Refer to the [Virtual Machine](#virtual-machines) resources that are available on GitHub.
   
 ## Project Management
 TODO: Talk about the project management resources available from Github.
 
-## Virtual Machines
+## Codespaces (Virtual Machines)
 TODO: Study the availability of complementary computational resources made available by Github.
+Initial testing of Codespaces appears to work well for deploying small tools. The VM can stay persistent for up to four hours (15 minutes by default)
 
 ## Git Workflow
-TODO: Add information here.
+Git - an acronym for global information tracking - is crucial for developing well maintained and functioning coding solutions. Version control provides the ability for multiple people to be working on the same project simultaneously, whilst maintaining coherence between different, often remote, instances of the codebase.
 
-## Unit testing and integration
-TODO: Add information here.
+### Minimum required workflow (*dev-main*)
+At a minimum, a *dev-main* branching strategy should be employed. Active development occurs on the *dev* branch, which is merged into the *main* branch once a stable and tested solution is developed. A fully functioning version repository should be maintained on the *main* branch that is used in production.
+
+A more comprehensive git-workflow can be employed for larger codebases, as is recommended by the Data Science team. This enables the development of new features, deploying quick bug fixes and testing new developments prior to release as a working version.
+
+[<img src="https://nvie.com/img/main-branches@2x.png">](https://nvie.com/posts/a-successful-git-branching-model/).
+
+### Software development workflow
+For larger projects, branches can be created for main, development, features, releases and hotfixes.
+
+[<img src="https://nvie.com/img/git-model@2x.png">](https://nvie.com/posts/a-successful-git-branching-model/).
+
+
+## Software Testing
+Software testing is the act of examining the artifacts and the behavior of the software under test by validation and verification. Not all scripts or applications will necessarily require unit tests, e.g. simple data processing. For OOP (object-orientated programming it is imperative to implement within a project).
+
+**Unit tests** test individual units (modules, functions, classes) in isolation from the rest of the program.
+**Integration tests**, as the name suggests, is to test whether many separately developed modules work together as expected.
+Link for unit testing information: https://realpython.com/python-testing/
+
+TODO: Develop example script that implement unit testing and integration in production.
+
 
 ## Project folder structure
-Insofar possible, we recommend using the file structure convension as detailed below for consistency (adapted from the [Coockiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) blog). Note that every repository is limited to 500MB of storage capacity - GitHub does not replace Sharepoint, but provides enough capacity to host some test files or data that should form apart of unit testing and integration. Ensure existing standards, e.g. APIMS (Aurecon Project Information Management Standard) is followed for handling data received and transmitted for projects.
+Insofar possible, we recommend using the file structure convention as detailed below for consistency (adapted from the [Coockiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) blog). Note that every repository is limited to 500MB of storage capacity - GitHub does not replace Sharepoint, but provides enough capacity to host some test files or data that should form apart of unit testing and integration. Ensure existing standards, e.g. APIMS (Aurecon Project Information Management Standard) is followed for handling data received and transmitted for projects.
 
 TODO: Create folder templates and sync to the repository that users can use as a template
 
 ### Python
 ```
-├── LICENSE              <- TODO: Finalise license definition. all IP associated with projects is retained by Zutari 
+├── LICENSE              <- TODO: Finalize license definition. all IP associated with projects is retained by Zutari 
 |                           or Zutari/Aurecon agreement in the case of the GDC.
 ├── README.md            <- The top-level README for developers using this project.
 ├── setup.py             <- Make this project pip installable with `pip install -e` (in the case of a module that is)
@@ -63,9 +84,9 @@ TODO: Create folder templates and sync to the repository that users can use as a
 Zutari set out the initial coding guidelines for Python (written by Paul Nel). These sets out some good starting guidelines to aid 
 in providing some measure of uniformity given the language's popularity.
 
-Google provides another excellent [Python Style Guide](https://google.github.io/styleguide/pyguide.html) that can be followd, overlapping with the existing Python guidelines.
+Google provides another excellent [Python Style Guide](https://google.github.io/styleguide/pyguide.html) that can be followed, overlapping with the existing Python guidelines.
 
-TODO: Andre to adapt and coding guidelines avaialble from the Aurecon CoDe team.
+TODO: Andre to adapt and coding guidelines avaialable from the Aurecon CoDe team.
 TODO: Andre to either adapt or link in Paul's coding guidelines.
 
 ## Software Development Guidelines
@@ -80,7 +101,7 @@ The software design document template is designed by ArjanCodes, a lecturer and 
    2. Who's it intended for?
    3. What problem does the software solve?
    4. How is it going to work?
-   5. What are the main concepts that are involed and how are they related?
+   5. What are the main concepts that are involved and how are they related?
 2. **User Interface**
    1. What are the main user stories (happy flows + alternative flow)?
    2. If you’re adding a new feature to an existing software application, what impact does the feature have on the overall structure of the interface? (are there big changes in the organization of menus, navigation, and so on?).
